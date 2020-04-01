@@ -19,10 +19,32 @@ namespace RunGame
             gamers.Add(gamer);
             SetNewLeader(gamer);
         }
-
+        public void Step()
+        {
+            RunAll();
+            FindNewLeader();
+        }
+        private void FindNewLeader()
+        {
+            foreach (Игрок g in gamers)
+            {
+                foreach (Игрок gg in gamers)
+                {
+                    if (g.Поймал(gg))
+                        SetNewLeader(g);
+                }
+            }
+        }
+        private void RunAll()
+        {
+            foreach (Игрок g in gamers)
+            {
+                g.Беги();
+            }
+        }
         private void SetNewLeader(Игрок gamer)
         {
-            throw new NotImplementedException();
+            leader = gamer;
         }
     }
 }
