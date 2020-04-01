@@ -10,7 +10,7 @@ namespace RunGame
     {
         void Беги();
         void Голя();
-        void НеГрля();
+        void НеГоля();
         bool Поймал(object obj);
     }
 }

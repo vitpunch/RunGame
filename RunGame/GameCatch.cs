@@ -13,6 +13,7 @@ namespace RunGame
         public GameCatch()
         {
             gamers = new List<Игрок>();
+            leader = null;
         }
         public void AddGamer(Игрок gamer)
         {
@@ -26,12 +27,13 @@ namespace RunGame
         }
         private void FindNewLeader()
         {
+            if (leader == null)
+                return;
             foreach (Игрок g in gamers)
             {
-                foreach (Игрок gg in gamers)
-                {
-                    if (g.Поймал(gg))
-                        SetNewLeader(g);
+                if (leader.Поймал(g)) {
+                    SetNewLeader(g);
+                    break;
                 }
             }
         }
@@ -44,7 +46,10 @@ namespace RunGame
         }
         private void SetNewLeader(Игрок gamer)
         {
+            if(leader!=null)
+                leader.НеГоля();
             leader = gamer;
+            leader.Голя();
         }
     }
 }
