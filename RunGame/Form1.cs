@@ -15,6 +15,7 @@ namespace RunGame
         public Form1()
         {
             InitializeComponent();
+            Arena arena = new Arena(pictureBox1);
         }
     }
 }
