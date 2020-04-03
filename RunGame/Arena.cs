@@ -28,5 +28,21 @@ namespace RunGame
         {
             graphics.Clear(picture.BackColor);
         }
+        public void Show(Circle circle)
+        {
+            Pen pen = new Pen(circle.color);
+            graphics.DrawEllipse(pen, circle.center.X - circle.radius, circle.center.Y - circle.radius, circle.radius * 2, circle.radius * 2);
+        }
+        public void Refresh()
+        {
+            picture.Refresh();
+        }
+        static public Circle NewCircle()
+        {
+            int radius = random.Next(Range.Width / 50, Range.Width / 20);
+            int x = random.Next(radius, Range.Width - radius);
+            int y = random.Next(radius, Range.Height - radius);
+            return new Circle(x, y, radius);
+        }
     }
 }

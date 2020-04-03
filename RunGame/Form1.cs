@@ -16,6 +16,7 @@ namespace RunGame
         {
             InitializeComponent();
             Arena arena = new Arena(pictureBox1);
+
         }
     }
 }
