@@ -31,10 +31,11 @@ namespace RunGame
                 return;
             foreach (Игрок g in gamers)
             {
-                if (leader.Поймал(g)) {
-                    SetNewLeader(g);
-                    break;
-                }
+                if(!leader.Equals(g))
+                    if (leader.Поймал(g)) {
+                        SetNewLeader(g);
+                        break;
+                    }
             }
         }
         private void RunAll()

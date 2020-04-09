@@ -14,18 +14,15 @@ namespace RunGame
         public Color color { get; private set; }
         int sx, sy;
         public Circle(int x,int y,int radius)
-            : this(x, y, radius, 0, 0)
-        {
-        }
-        public Circle(int x, int y, int radius, int sx, int sy)
         {
             center = new Point(x, y);
             this.radius = radius;
             color = Color.Blue;
-            this.sx = sx;
-            this.sy = sy;
+            sx = Arena.random.Next(-4,5);
+            if (sx == 0) sx -= 1;
+            sy = Arena.random.Next(-4,5);
+            if (sy == 0) sy -= 1;
         }
-
         void Игрок.Беги()
         {
             int x = center.X + sx;
@@ -55,7 +52,7 @@ namespace RunGame
         } 
         private bool Cross(Circle circle1, Circle circle2)
         {
-            return Distance(circle1.center, circle2.center) < circle1.radius + circle2.radius;
+            return Distance(circle1.center, circle2.center) < (circle1.radius + circle2.radius);
         }
         private int Distance(Point point1, Point point2)
         {

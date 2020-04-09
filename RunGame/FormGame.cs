@@ -13,19 +13,27 @@ namespace RunGame
     public partial class FormGame : Form
     {
         Arena arena;
-        GameCatch gameCatch;
+        GameCatch game;
         public FormGame()
         {
             InitializeComponent();
             arena = new Arena(pictureBox);
-            //gameCatch = new GameCatch();
+            game = new GameCatch();
         }
 
         private void buttonAddGamer_Click(object sender, EventArgs e)
         {
-            Circle circle = Arena.NewCircle();
-            //gameCatch.AddGamer(circle);
-            arena.Show(circle);
+            game.AddGamer(Arena.NewCircle());
+            //arena.Show(circle);
+            arena.Refresh();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            game.Step();
+            arena.Clear();
+            foreach(Circle circle in game.gamers)
+                arena.Show(circle);
             arena.Refresh();
         }
     }

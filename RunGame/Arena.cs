@@ -11,7 +11,7 @@ namespace RunGame
     class Arena
     {
         static public Size Range { get; private set; }
-        static Random random = new Random();
+        static public Random random = new Random();
 
         PictureBox picture;
         Graphics graphics;
@@ -39,7 +39,7 @@ namespace RunGame
         }
         static public Circle NewCircle()
         {
-            int radius = random.Next(Range.Width / 50, Range.Width / 20);
+            int radius = random.Next(Range.Width / 200, Range.Width / 50);
             int x = random.Next(radius, Range.Width - radius);
             int y = random.Next(radius, Range.Height - radius);
             return new Circle(x, y, radius);
