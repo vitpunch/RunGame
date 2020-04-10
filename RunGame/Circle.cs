@@ -37,16 +37,16 @@ namespace RunGame
         void Игрок.Голя()
         {
             color = Color.Red;
-            sx = -sx;
-            sy = -sy;
+            //sx = -sx;
+            //sy = -sy;
 
         }
 
         void Игрок.НеГоля()
         {
             color = Color.Blue;
-            sx = -sx;
-            sy = -sy;
+            //sx = -sx;
+            //sy = -sy;
         }
 
         bool Игрок.Поймал(Игрок obj)

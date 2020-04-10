@@ -13,12 +13,12 @@ namespace RunGame
     public partial class FormGame : Form
     {
         Arena arena;
-        GameCatch game;
+        GameVirus game;
         public FormGame()
         {
             InitializeComponent();
             arena = new Arena(pictureBox);
-            game = new GameCatch();
+            game = new GameVirus();
         }
 
         private void buttonAddGamer_Click(object sender, EventArgs e)
@@ -43,9 +43,6 @@ namespace RunGame
                 game.AddGamer(Arena.NewCircle());
             arena.Refresh();
         }
-        static public void RefreshCounter(int countt)
-        {
-            counttt.Text = countt.ToString();
-        }
+        
     }
 }

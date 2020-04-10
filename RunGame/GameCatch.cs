@@ -41,7 +41,7 @@ namespace RunGame
                 if(!leader.Equals(g))
                     if (leader.Поймал(g)) {    
                         gamers.Remove(leader);
-                        Arena.RefreshCounter(gamers.Count);
+                        
                         SetNewLeader(g);
 
                         break;

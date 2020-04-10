@@ -33,7 +33,7 @@
             this.buttonAddGamer = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.button10 = new System.Windows.Forms.Button();
-            counttt = new System.Windows.Forms.Button();
+            this.counttt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 10;
+            this.timer.Interval = 20;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // button10
@@ -77,19 +77,19 @@
             // 
             // counttt
             // 
-            counttt.Location = new System.Drawing.Point(813, 16);
-            counttt.Name = "counttt";
-            counttt.Size = new System.Drawing.Size(230, 23);
-            counttt.TabIndex = 3;
-            counttt.Text = "button1";
-            counttt.UseVisualStyleBackColor = true;
+            this.counttt.Location = new System.Drawing.Point(813, 16);
+            this.counttt.Name = "counttt";
+            this.counttt.Size = new System.Drawing.Size(230, 23);
+            this.counttt.TabIndex = 3;
+            this.counttt.Text = "button1";
+            this.counttt.UseVisualStyleBackColor = true;
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 698);
-            this.Controls.Add(counttt);
+            this.Controls.Add(this.counttt);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.buttonAddGamer);
             this.Controls.Add(this.pictureBox);
@@ -107,7 +107,7 @@
         private System.Windows.Forms.Button buttonAddGamer;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button button10;
-        public static System.Windows.Forms.Button counttt;
+        public System.Windows.Forms.Button counttt;
     }
 }
 
