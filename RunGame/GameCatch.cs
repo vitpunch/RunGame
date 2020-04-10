@@ -10,6 +10,8 @@ namespace RunGame
     {
         public List<Игрок> gamers { get; private set; }
         Игрок leader;
+        int leaderSkipSteps;
+        static int maxSkipSteps=0;
         public GameCatch()
         {
             gamers = new List<Игрок>();
@@ -27,13 +29,21 @@ namespace RunGame
         }
         private void FindNewLeader()
         {
+            if (leaderSkipSteps > 0)
+            {
+                leaderSkipSteps--;
+                return;
+            }
             if (leader == null)
                 return;
             foreach (Игрок g in gamers)
             {
                 if(!leader.Equals(g))
-                    if (leader.Поймал(g)) {
+                    if (leader.Поймал(g)) {    
+                        gamers.Remove(leader);
+                        Arena.RefreshCounter(gamers.Count);
                         SetNewLeader(g);
+
                         break;
                     }
             }
@@ -47,10 +57,14 @@ namespace RunGame
         }
         private void SetNewLeader(Игрок gamer)
         {
-            if(leader!=null)
+            
+            if (leader != null)
+            {
                 leader.НеГоля();
+            }
             leader = gamer;
             leader.Голя();
+            leaderSkipSteps = maxSkipSteps;
         }
     }
 }

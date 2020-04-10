@@ -36,5 +36,16 @@ namespace RunGame
                 arena.Show(circle);
             arena.Refresh();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 100; i++)
+                game.AddGamer(Arena.NewCircle());
+            arena.Refresh();
+        }
+        static public void RefreshCounter(int countt)
+        {
+            counttt.Text = countt.ToString();
+        }
     }
 }

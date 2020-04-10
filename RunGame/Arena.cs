@@ -44,5 +44,9 @@ namespace RunGame
             int y = random.Next(radius, Range.Height - radius);
             return new Circle(x, y, radius);
         }
+        static public void RefreshCounter(int count)
+        {
+            FormGame.RefreshCounter(count);    
+        }
     }
 }
