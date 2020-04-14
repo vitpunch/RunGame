@@ -23,7 +23,7 @@ namespace RunGame
 
         private void buttonAddGamer_Click(object sender, EventArgs e)
         {
-            game.AddGamer(Arena.NewCircle());
+            game.AddGamer(Arena.NewBox());
             //arena.Show(circle);
             arena.Refresh();
         }
@@ -32,15 +32,15 @@ namespace RunGame
         {
             game.Step();
             arena.Clear();
-            foreach(Circle circle in game.gamers)
-                arena.Show(circle);
+            foreach(Box box in game.gamers)
+                arena.Show(box);
             arena.Refresh();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 100; i++)
-                game.AddGamer(Arena.NewCircle());
+                game.AddGamer(Arena.NewBox());
             arena.Refresh();
         }
         

@@ -39,9 +39,7 @@ namespace RunGame
             color = Color.Red;
             //sx = -sx;
             //sy = -sy;
-
         }
-
         void Игрок.НеГоля()
         {
             color = Color.Blue;

@@ -25,7 +25,6 @@ namespace RunGame
             RunAll();
             FindNewVirused();
         }
-
         private void FindNewVirused()
         {
             foreach (Игрок g in gamers)
@@ -45,14 +44,12 @@ namespace RunGame
                         }
                 }
         }
-
         private void RunAll()
         {
             foreach (Игрок gamer in gamers)
-                if (virused.Contains(gamer))
+                //if (virused.Contains(gamer))
                     gamer.Беги();
         }
-
         private void SetNewVirus(Игрок gamer)
         {
             virused = new List<Игрок>();
