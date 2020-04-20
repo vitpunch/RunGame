@@ -13,12 +13,12 @@ namespace RunGame
     public partial class FormGame : Form
     {
         Arena arena;
-        GameVirus game;
+        GameCatch game;
         public FormGame()
         {
             InitializeComponent();
             arena = new Arena(pictureBox);
-            game = new GameVirus();
+            game = new GameCatch();
         }
 
         private void buttonAddGamer_Click(object sender, EventArgs e)
@@ -32,15 +32,17 @@ namespace RunGame
         {
             game.Step();
             arena.Clear();
-            foreach(Box box in game.gamers)
+            foreach(Игрок box in game.gamers)
                 arena.Show(box);
             arena.Refresh();
         }
-
         private void button10_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 20; i++)
+            {
                 game.AddGamer(Arena.NewBox());
+                game.AddGamer(Arena.NewCircle());
+            }
             arena.Refresh();
         }
         

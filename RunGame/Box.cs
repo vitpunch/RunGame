@@ -23,8 +23,10 @@ namespace RunGame
         {
             box = new Rectangle(x, y, width, height);
             color = Color.Green;
-            sx = Arena.random.Next(-5, 5);
-            sy = Arena.random.Next(-5, 5);
+            sx = Arena.random.Next(-4, 5);
+            if (sx == 0) sx--;
+            sy = Arena.random.Next(-4, 5);
+            if (sy == 0) sy--;
         }
         public void Беги()
         {
@@ -36,11 +38,17 @@ namespace RunGame
         }
         public void НеГоля()
         {
-
+            color = Color.Green;
         }
         public bool Поймал(Игрок obj)
         {
-            return false;
+            if (obj.GetType() != typeof(Box))
+                return false;
+            Box incomingBox = (Box)obj;
+            return (box.X - incomingBox.box.Width < incomingBox.box.X &
+                incomingBox.box.X < box.X + box.Width &
+                box.Y - incomingBox.box.Height < incomingBox.box.Y &
+                incomingBox.box.Y < box.Y + box.Height);
         }
         private void Move()
         {

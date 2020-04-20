@@ -40,7 +40,7 @@ namespace RunGame
             {
                 if(!leader.Equals(g))
                     if (leader.Поймал(g)) {    
-                        gamers.Remove(leader);
+                        //gamers.Remove(leader);
                         
                         SetNewLeader(g);
 

@@ -28,6 +28,14 @@ namespace RunGame
         {
             graphics.Clear(picture.BackColor);
         }
+
+        public  void Show(Игрок obj)
+        {
+            if (obj.GetType() == typeof(Box))
+                Show((Box)obj);
+            if (obj.GetType() == typeof(Circle))
+                Show((Circle)obj);
+        }
         public void Show(Circle circle)
         {
             Pen pen = new Pen(circle.color);
@@ -38,6 +46,7 @@ namespace RunGame
             Pen pen = new Pen(box.color);
             graphics.DrawRectangle (pen, box.box);
         }
+        
         public void Refresh()
         {
             picture.Refresh();
@@ -52,7 +61,7 @@ namespace RunGame
         static public Box NewBox()
         {
             int width = random.Next(Range.Width / 200, Range.Width / 50);
-            int height = width;
+            int height = random.Next(Range.Width / 200, Range.Width / 50);
             int x = random.Next(0, Range.Width - width);
             int y = random.Next(0, Range.Height - height);
             return new Box(x, y, width, height);

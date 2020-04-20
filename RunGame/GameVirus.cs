@@ -47,7 +47,7 @@ namespace RunGame
         private void RunAll()
         {
             foreach (Игрок gamer in gamers)
-                //if (virused.Contains(gamer))
+                //if (!virused.Contains(gamer))
                     gamer.Беги();
         }
         private void SetNewVirus(Игрок gamer)
